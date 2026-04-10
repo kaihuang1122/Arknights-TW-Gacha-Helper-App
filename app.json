@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "Gacha-App",
-    "slug": "Gacha-App",
+    "name": "Arknights Gacha Helper",
+    "slug": "arknights-gacha-helper",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./icon.png",
     "scheme": "gachaapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -12,12 +12,7 @@
       "supportsTablet": true
     },
     "android": {
-      "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
-        "monochromeImage": "./assets/images/android-icon-monochrome.png"
-      },
+      "package": "com.kaihuang1122.arknightsgacha",
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
     },
@@ -43,6 +38,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "d5d6fd4e-fc0b-4cee-b98a-359206765e2f"
+      }
     }
   }
 }

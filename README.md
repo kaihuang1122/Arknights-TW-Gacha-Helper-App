@@ -1,50 +1,30 @@
-# Welcome to your Expo app 👋
+# Arknights-TW-Gacha-Helper-App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+行動端的明日方舟抽卡紀錄分析助手，基於 React Native (Expo) 開發的 WebView 自動化提取工具。
 
-## Get started
+## 🎯 核心功能
+* 自動載入鷹角官方登入頁面
+* 利用注入腳本背景攔截並提取 `ak-user-tw` 與 localStorage 的 `X-Role-Token`
+* 無縫生成資料表單並 POST 至分析網站，達成在手機上一鍵獲取抽卡紀錄的順暢體驗。
 
-1. Install dependencies
+## 🚀 開發與執行
 
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+### 本機開發測試 (Expo Go)
 ```bash
-npm run reset-project
+npm install
+npm start
 ```
+掃描終端機出現的 QR Code，即可透過手機上的 Expo Go App 進行即時預覽與測試。
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 自動化編譯 (GitHub Actions)
+本專案已配置完整的 GitHub CI/CD 工作流程，不需在本機建置 Android 開發環境！
 
-## Learn more
+只要發布包含版本號標籤 (Tag) 的提交，GitHub 伺服器就會自動幫您打包成 `.apk` 檔，並發布在 Releases 頁面：
+```bash
+# 給當前進度打上 v1.0.0 標籤
+git tag v1.0.0
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+# 將標籤推送到 GitHub (將觸發自動編譯與發布)
+git push origin v1.0.0
+```
+約 3 分鐘後，即可在 GitHub 的 Releases 區塊下載 `Arknights-Gacha-Helper-v1.0.0.apk`。
