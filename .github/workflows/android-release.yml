@@ -35,14 +35,14 @@ jobs:
       - name: 🏗️ Execute Expo Prebuild
         run: npx expo prebuild --platform android --clean
 
-      - name: 🔨 Compile APK (Assemble Debug)
+      - name: 🔨 Compile APK (Assemble Release)
         run: |
           cd android
-          ./gradlew assembleDebug
+          ./gradlew assembleRelease
 
       - name: 🏷️ Rename APK
         run: |
-          mv android/app/build/outputs/apk/debug/app-debug.apk Arknights-Gacha-Helper-${{ github.ref_name }}.apk
+          mv android/app/build/outputs/apk/release/app-release.apk Arknights-Gacha-Helper-${{ github.ref_name }}.apk
 
       - name: 🚀 Upload APK to GitHub Release
         uses: softprops/action-gh-release@v2
